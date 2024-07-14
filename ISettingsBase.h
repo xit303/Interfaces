@@ -25,7 +25,7 @@ public:
     ISettingsBase(const char* name) : name(name) {}
 
     virtual bool HasChanged() = 0;
-    virtual void SetDefault() = 0;
-    virtual void Reload() = 0;
-    virtual void Save() = 0;
+    virtual bool SetDefault() = 0;
+    virtual bool Reload() = 0;
+    virtual bool Save() = 0;
 };
