@@ -5,24 +5,23 @@
 //******************************************************
 
 #include "IBaseClass.h"
+#include "IName.h"
 
 //******************************************************
 // Classes
 //******************************************************
 
-class ISettingsBase : public IBaseClass
+class ISettingsBase : public IBaseClass, public IName
 {
 protected:
-    const char* name;
-
     virtual void OnInit() = 0;
     virtual void OnSetDefault() = 0;
     virtual void OnReload() = 0;
     virtual void OnSave() = 0;
-    virtual void Print() {};
+    virtual void Print() {}
 
 public:
-    ISettingsBase(const char* name) : name(name) {}
+    ISettingsBase(const char* name) : IName(name) {}
 
     virtual bool HasChanged() = 0;
     virtual bool SetDefault() = 0;
